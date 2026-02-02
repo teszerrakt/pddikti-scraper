@@ -5,6 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "bun run example/index.ts",
+		"test": "bun test",
 		"scrape": "bun run example/index.ts",
 		"lint": "biome check .",
 		"lint-staged": "lint-staged",
