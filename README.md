@@ -66,6 +66,7 @@ pddikti-scraper/
 ├── example/
 │   └── index.ts      # Usage Demo
 ├── .husky/           # Git Hooks
+```
 
 ## Disclaimer
 
