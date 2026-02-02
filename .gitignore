@@ -6,7 +6,7 @@ bun.lockb
 
 # Ignore output files
 pddikti_results.json
-*.json
+
 
 # Ignore build output
 dist/

@@ -1,0 +1,27 @@
+{
+	"name": "pddikti-scraper",
+	"version": "1.0.0",
+	"description": "PDDIKTI student data scraper using Bun and Zod",
+	"type": "module",
+	"scripts": {
+		"start": "bun run example/index.ts",
+		"scrape": "bun run example/index.ts",
+		"lint": "biome check .",
+		"lint-staged": "lint-staged",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"zod": "^3.22.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.13",
+		"@types/bun": "latest",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.2.7"
+	},
+	"lint-staged": {
+		"*.{js,ts,d.ts,json,md}": [
+			"biome check --write --no-errors-on-unmatched"
+		]
+	}
+}
