@@ -26,8 +26,8 @@ export class DetailBuilder {
 	 * Execute the pipeline.
 	 */
 	async run(): Promise<FilteredStudent[]> {
-		console.log(`\n📚 Processing query: ${this.query}`);
-		console.log("=".repeat(50));
+		console.error(`\n📚 Processing query: ${this.query}`);
+		console.error("=".repeat(50));
 
 		// Step 1: Search
 		const searchResults = await client.search(this.query);
@@ -37,7 +37,7 @@ export class DetailBuilder {
 		for (const filter of this.searchFilters) {
 			filteredSearch = filteredSearch.filter(filter);
 		}
-		console.log(
+		console.error(
 			`   Filtered to ${filteredSearch.length} students after search filters`,
 		);
 
@@ -56,7 +56,7 @@ export class DetailBuilder {
 
 				if (passesFilters) {
 					matchCount++;
-					console.log(`   ✅ Match found: ${detail.nama} (${detail.nim})`);
+					console.error(`   ✅ Match found: ${detail.nama} (${detail.nim})`);
 					finalResults.push({
 						query: this.query,
 						searchResult: student,
@@ -66,7 +66,7 @@ export class DetailBuilder {
 			}
 		}
 
-		console.log(`   Total matches for ${this.query}: ${matchCount}`);
+		console.error(`   Total matches for ${this.query}: ${matchCount}`);
 		return finalResults;
 	}
 }

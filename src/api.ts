@@ -32,7 +32,7 @@ export class PddiktiClient {
 		const encodedQuery = encodeURIComponent(query);
 		const url = `${PddiktiClient.BASE_URL}/pencarian/mhs/${encodedQuery}`;
 
-		console.log(`🔍 Searching for: ${query}`);
+		console.error(`🔍 Searching for: ${query}`);
 
 		try {
 			await this.sleep(PddiktiClient.DELAY_MS);
@@ -49,7 +49,7 @@ export class PddiktiClient {
 
 			// Validate the response with Zod
 			const results = z.array(SearchResultSchema).parse(data);
-			console.log(`   Found ${results.length} students`);
+			console.error(`   Found ${results.length} students`);
 
 			return results;
 		} catch (error) {

@@ -7,11 +7,13 @@
 		"start": "bun run example/index.ts",
 		"test": "bun test",
 		"scrape": "bun run example/index.ts",
+		"mcp-server": "bun run mcp-src/index.ts",
 		"lint": "biome check .",
 		"lint-staged": "lint-staged",
 		"prepare": "husky"
 	},
 	"dependencies": {
+		"@modelcontextprotocol/sdk": "^1.25.3",
 		"zod": "^3.22.4"
 	},
 	"devDependencies": {

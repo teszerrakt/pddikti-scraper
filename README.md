@@ -41,6 +41,21 @@ This repository includes a pre-configured example script.
 bun run start
 ```
 
+## MCP Server
+
+This project includes an MCP (Model Context Protocol) server that allows LLMs to interact with the PDDIKTI API.
+
+### Running the MCP Server
+
+```bash
+bun run mcp-server
+```
+
+### Available Tools
+
+- `search_students`: Search for students by name, NIM, or university.
+- `get_student_detail`: Get detailed information for a specific student by ID.
+
 ## Development
 
 ### Linting & Formatting
@@ -50,6 +65,14 @@ This project uses [Biome](https://biomejs.dev/) for linting and formatting.
 ```bash
 # Run lint check
 bun run lint
+```
+
+### Testing
+
+Run unit tests using Bun's built-in test runner.
+
+```bash
+bun test
 ```
 
 Pre-commit hooks are configured with **Husky** and **lint-staged** to ensure code quality on every commit.
